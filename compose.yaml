@@ -1,0 +1,26 @@
+services:
+  openclaw:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: openclaw
+    volumes:
+      - openclaw-workspace:/workspace
+    environment:
+      - OPENCLAW_WORKSPACE=/workspace
+      - OPENCLAW_STATE_DIR=/workspace/.openclaw
+    stdin_open: true
+    tty: true
+  openclaw-gateway:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: openclaw-gateway
+    restart: unless-stopped
+    volumes:
+      - openclaw-workspace:/workspace
+    environment:
+      - OPENCLAW_WORKSPACE=/workspace
+      - OPENCLAW_STATE_DIR=/workspace/.openclaw
+    ports:
+      - "127.0.0.1:18789:18789"
+    command: openclaw gateway run --bind lan
+volumes:
+  openclaw-workspace:
+    name: openclaw-workspace
