@@ -266,7 +266,7 @@
 - 地址: Emeryville（Oakland 边界）
 - 定位: 18,000 sq ft 综合艺术设施，画廊 + 版画工坊 + 共享工作室
 - 新兴友好: ✅✅ 鼓励新兴艺术家驻留，强调协作
-- Open Call: 🔴 不定期，曾有"Scouting Oakland"主题 call；关注官网
+- Open Call: 🟢 不定期，曾有"Scouting Oakland"主题 call；关注官网
 - 备注: 空间极大，适合装置、版画等大型作品
 
 ### Art House Gallery & Cultural Center ⭐⭐
@@ -280,21 +280,21 @@
 - 地址: Hayward, CA
 - 定位: 非营利社区画廊，服务东湾南部
 - 新兴友好: ✅ 社区艺术家为主，门槛低
-- Open Call: 🔴 关注官网
+- Open Call: 🟢 关注官网
 
 ### Olive Hyde Art Gallery ⭐⭐
 - 网址: olivehydeartguild.org
 - 地址: Fremont, CA
 - 定位: 市政支持，艺术家协会运营
 - 新兴友好: ✅ 会员制，新兴艺术家可申请加入
-- Open Call: 🔴 定期 juried 展，关注官网
+- Open Call: 🟢 定期 juried 展，关注官网
 
 ### ACCI Gallery ⭐⭐
 - 网址: accigallery.com
 - 地址: Berkeley
 - 定位: 工艺 + 当代艺术，1971年创立
 - 新兴友好: ✅ 工艺艺术家友好，接受多媒介
-- Open Call: 🔴 不定期，关注官网
+- Open Call: 🟢 不定期，关注官网
 
 ### Cube Space Gallery ⭐⭐
 - 网址: berkeleyca.gov/community-recreation/civic-arts/public-art/cube-space-gallery
@@ -308,14 +308,14 @@
 - 地址: East Oakland
 - 定位: 女性+ 艺术家，实验性，绘画/版画/拼贴
 - 新兴友好: ✅ 10x10 展览格式适合新兴艺术家
-- Open Call: 🔴 faultlineartspace.com/artist-submissions
+- Open Call: 🟢 faultlineartspace.com/artist-submissions
 
 ### Rock Paper Scissors Collective ⭐⭐⭐
 - 网址: rpscollective.org
 - 地址: Oakland
 - 定位: DIY 艺术家集体，完全由艺术家运营
 - 新兴友好: ✅✅ 独立、实验性风格首选
-- Open Call: 🔴 定期，关注官网
+- Open Call: 🟢 定期，关注官网
 
 ### Thelma Harris Art Gallery
 - 网址: thelmaharrisartgallery.com
@@ -387,7 +387,7 @@
 - 网址: artarkgallery.com
 - 地址: San Jose, CA
 - 新兴友好: ✅ 社区导向
-- Open Call: 🔴 关注官网
+- Open Call: 🟢 关注官网
 
 ### QD Gallery
 - 网址: qdgallery.com
