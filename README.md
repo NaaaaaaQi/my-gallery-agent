@@ -1,5 +1,7 @@
 # My Gallery Agent
 
+**[🌐 Live Gallery Database →](https://naaaaaaqi.github.io/my-gallery-agent/)**
+
 A personal AI agent deployed via [OpenClaw](https://github.com/openclaw/openclaw), connected to Telegram and powered by Claude (Anthropic). The agent specializes in the Bay Area art scene — tracking galleries, open calls, and upcoming events across San Francisco, the East Bay, Peninsula, and South Bay.
 
 ---

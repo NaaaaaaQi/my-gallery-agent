@@ -175,14 +175,14 @@ def gallery_card(g: Gallery) -> str:
         return ""
 
     stars_html = "⭐" * g.friendliness if g.friendliness else ""
-    bluechip_badge = '<span class="badge badge-blue">蓝筹</span>' if g.bluechip else ""
+    bluechip_badge = '<span class="badge badge-blue">Blue-chip</span>' if g.bluechip else ""
 
     if g.open_call == "open":
         status_badge = '<span class="badge badge-green">🟢 Open Call</span>'
     elif g.open_call == "closed":
-        status_badge = '<span class="badge badge-red">🔴 关注</span>'
+        status_badge = '<span class="badge badge-red">🔴 Monitor</span>'
     else:
-        status_badge = '<span class="badge badge-gray">待确认</span>'
+        status_badge = '<span class="badge badge-gray">Unknown</span>'
 
     url_html = f'<a href="https://{g.url}" target="_blank" class="gallery-url">{g.url} ↗</a>' if g.url else ""
     addr_html = f'<div class="gallery-addr">📍 {g.address}</div>' if g.address else ""
@@ -226,9 +226,9 @@ def events_table(rows: List[str]) -> str:
         return ""
     return f"""
 <div class="events-section">
-  <h2>📅 近期活动 & Open Call 截止日期</h2>
+  <h2>📅 Upcoming Events & Deadlines</h2>
   <table class="events-table">
-    <thead><tr><th>画廊 / 机构</th><th>活动 / 展览</th><th>日期</th></tr></thead>
+    <thead><tr><th>Gallery / Organization</th><th>Event / Exhibition</th><th>Date</th></tr></thead>
     <tbody>{"".join(cells)}</tbody>
   </table>
 </div>"""
@@ -241,7 +241,7 @@ def actions_list(rows: List[str]) -> str:
     items = "".join(f"<li>{strip_num(r)}</li>" for r in rows)
     return f"""
 <div class="actions-section">
-  <h2>💡 快速行动建议</h2>
+  <h2>💡 Quick Action Checklist</h2>
   <ol class="actions-list">{items}</ol>
 </div>"""
 
@@ -258,11 +258,11 @@ def build_html(galleries: List[Gallery], events_rows, resources_rows, actions_ro
     open_count = sum(1 for g in galleries if not g.excluded and g.open_call == "open")
 
     return f"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>湾区画廊资料库</title>
+<title>Bay Area Gallery Database</title>
 <style>
   :root {{
     --bg: #0f0f13;
@@ -507,25 +507,25 @@ def build_html(galleries: List[Gallery], events_rows, resources_rows, actions_ro
 <body>
 
 <div class="hero">
-  <h1>湾区画廊资料库</h1>
-  <p>Bay Area Gallery Database — San Francisco · East Bay · Peninsula · South Bay</p>
+  <h1>Bay Area Gallery Database</h1>
+  <p>San Francisco · East Bay · Peninsula · South Bay · Santa Cruz · North Bay</p>
   <div class="stats">
-    <div class="stat-item">🏛 <span class="stat-num">{total}</span> 画廊</div>
-    <div class="stat-item">🟢 <span class="stat-num">{open_count}</span> 开放投递</div>
-    <div class="stat-item">📅 更新于 <span class="stat-num">{TODAY}</span></div>
+    <div class="stat-item">🏛 <span class="stat-num">{total}</span> galleries</div>
+    <div class="stat-item">🟢 <span class="stat-num">{open_count}</span> open calls</div>
+    <div class="stat-item">📅 Updated <span class="stat-num">{TODAY}</span></div>
   </div>
 </div>
 
 <div class="filters">
-  <input class="search-input" type="search" id="search" placeholder="搜索画廊名称、地址…" />
+  <input class="search-input" type="search" id="search" placeholder="Search galleries, addresses…" />
   <select class="filter-select" id="region-filter">
-    <option value="">所有地区</option>
+    <option value="">All regions</option>
     {region_opts}
   </select>
-  <button class="filter-btn active" data-filter="all">全部</button>
+  <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="open">🟢 Open Call</button>
-  <button class="filter-btn" data-filter="stars3">⭐⭐⭐ 三星</button>
-  <button class="filter-btn" data-filter="bluechip">🔵 蓝筹</button>
+  <button class="filter-btn" data-filter="stars3">⭐⭐⭐ Top picks</button>
+  <button class="filter-btn" data-filter="bluechip">🔵 Blue-chip</button>
   <span id="count-display"></span>
 </div>
 
@@ -538,7 +538,7 @@ def build_html(galleries: List[Gallery], events_rows, resources_rows, actions_ro
 </div>
 
 <div class="footer">
-  最后更新 {TODAY} · 数据来源：人工整理 + AI 自动检测 ·
+  Last updated {TODAY} · Curated by hand + AI-assisted status detection ·
   <a href="https://github.com/NaaaaaaQi/my-gallery-agent" target="_blank">GitHub ↗</a>
 </div>
 
@@ -576,7 +576,7 @@ function applyFilters() {{
     if (show) visible++;
   }});
 
-  counter.textContent = visible + ' 个结果';
+  counter.textContent = visible + ' results';
 }}
 
 search.addEventListener('input', applyFilters);
