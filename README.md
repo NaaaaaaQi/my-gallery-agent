@@ -130,6 +130,56 @@ Open: `http://127.0.0.1:18789/#token=<TOKEN>`
 
 ---
 
+## Automated Status Updates
+
+`scripts/update_gallery_status.py` scrapes every gallery's website and uses Claude Haiku to detect active open calls, submission deadlines, and upcoming events — then rewrites `GALLERY_DATABASE.md` and syncs it into the running container automatically.
+
+```bash
+# Install dependencies (one-time)
+pip3 install httpx beautifulsoup4 anthropic
+
+# Run a full update
+ANTHROPIC_API_KEY=sk-ant-... python3 scripts/update_gallery_status.py
+
+# Preview changes without writing files
+ANTHROPIC_API_KEY=sk-ant-... python3 scripts/update_gallery_status.py --dry-run
+
+# Check a single gallery
+ANTHROPIC_API_KEY=sk-ant-... python3 scripts/update_gallery_status.py --gallery "Mercury 20"
+```
+
+Sample output:
+```
+Checking 45 galleries...
+  [1/45] Mercury 20 Gallery (mercurytwenty.com) ✓
+  [2/45] ARC Gallery (arc-sf.com) ✓
+  ...
+
+────────────────────────────────────────────────────
+  Gallery Status Update — 2026-06-10
+────────────────────────────────────────────────────
+
+🟢  OPEN CALL DETECTED (3)
+    • Mercury 20 Gallery
+        → Artist Reception and Talk — Saturday, May 16, 3–5pm
+        ℹ Actively seeking new artist members for their collective
+
+    • Gray Loft Gallery
+        → Call for Entry open — annual color-theme juried show
+        ℹ Deadline June 30; submit via callforentry.org
+
+🔴  NO ACTIVE CALL (38)
+    • Berggruen Gallery — invitation only, no submission info
+    ...
+
+    Total checked: 45  |  Updated: 41  |  Errors: 4
+────────────────────────────────────────────────────
+```
+
+The script skips blue-chip / invitation-only galleries automatically. Run it weekly to keep the database current.
+
+---
+
 ## Customization
 
 **Update the gallery database** — edit `GALLERY_DATABASE.md` locally, then:
