@@ -182,6 +182,44 @@ The script skips blue-chip / invitation-only galleries automatically. Run it wee
 
 ---
 
+## Newsletter Pipeline
+
+`scripts/parse_newsletters.py` reads a dedicated inbox via IMAP, uses Claude Haiku to extract open call information from gallery newsletters, and automatically updates the database.
+
+**How it works:**
+
+```
+Gallery sends newsletter
+        ↓
+Dedicated inbox receives email
+        ↓
+parse_newsletters.py (runs every Monday 9am)
+        ↓
+Claude Haiku analyzes email for open calls / deadlines
+        ↓
+GALLERY_DATABASE.md updated (🔴 → 🟢)
+        ↓
+docs/index.html regenerated + pushed to GitHub Pages
+```
+
+**Setup** — add to `.env`:
+```
+GALLERY_EMAIL=your-dedicated-inbox@gmail.com
+GALLERY_EMAIL_PASSWORD=your-app-password
+```
+
+```bash
+# Run manually
+python3 scripts/parse_newsletters.py
+
+# Preview without writing files
+python3 scripts/parse_newsletters.py --dry-run
+```
+
+The script tracks which emails have already been processed and only acts on new ones. Open call statuses are updated automatically — no manual intervention needed.
+
+---
+
 ## Customization
 
 **Update the gallery database** — edit `GALLERY_DATABASE.md` locally, then:
