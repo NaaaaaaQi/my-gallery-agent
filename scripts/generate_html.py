@@ -118,20 +118,20 @@ def parse_db(md_text: str) -> tuple:
                         continue
                     cell_low = cell.lower()
 
-                    if "网址" in bl:
+                    if "Website:" in bl or "网址" in bl:
                         m = re.search(r"https?://([^\s\)]+)", bl)
                         if not m:
                             m = re.search(r"([a-z0-9.\-]+\.[a-z]{2,})", bl, re.I)
                         if m:
                             g.url = m.group(1).rstrip("/").lower()
 
-                    elif "地址" in bl and not g.address:
+                    elif ("Address:" in bl or "地址" in bl) and not g.address:
                         addr = re.sub(r"\[.*?\]\(.*?\)", "", bl)
-                        addr = re.sub(r".*\|\s*", "", addr).strip()
+                        addr = re.sub(r"^-\s*(Address:|地址:?)\s*", "", addr).strip()
                         g.address = addr[:80]
 
-                    elif "定位" in bl and not g.description:
-                        desc = re.sub(r".*\|\s*", "", bl).strip()
+                    elif ("About:" in bl or "定位" in bl) and not g.description:
+                        desc = re.sub(r"^-\s*(About:|定位:?)\s*", "", bl).strip()
                         g.description = re.sub(r"[*_]", "", desc)[:100]
 
                     elif "newsletter" in cell_low or "newsletter" in bl.lower():
@@ -142,18 +142,18 @@ def parse_db(md_text: str) -> tuple:
                             g.open_call = "open"
                         elif "🔴" in bl:
                             g.open_call = "closed"
-                        note = re.sub(r".*\|\s*", "", bl).strip()
+                        note = re.sub(r"^-\s*Open Call:?\s*", "", bl, flags=re.I).strip()
                         note = re.sub(r"[🟢🔴]", "", note).strip()
                         note = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", note)
                         g.open_call_note = note[:120]
 
-                    elif "近期活动" in bl:
-                        evt = re.sub(r".*\|\s*", "", bl).strip()
+                    elif "Events:" in bl or "近期活动" in bl:
+                        evt = re.sub(r"^-\s*(Events:|近期活动:?)\s*", "", bl).strip()
                         evt = re.sub(r"\*\*([^\*]+)\*\*", r"\1", evt)
                         g.events = evt[:150]
 
-                    elif "备注" in bl and not g.notes:
-                        note = re.sub(r".*\|\s*", "", bl).strip()
+                    elif ("Notes:" in bl or "备注" in bl) and not g.notes:
+                        note = re.sub(r"^-\s*(Notes:|备注:?)\s*", "", bl).strip()
                         g.notes = re.sub(r"\*\*([^\*]+)\*\*", r"\1", note)[:150]
 
                 j += 1
@@ -192,6 +192,11 @@ def gallery_card(g: Gallery) -> str:
 
     tags_data = f'data-region="{g.region}" data-open="{g.open_call}" data-stars="{g.friendliness}" data-blue="{str(g.bluechip).lower()}"'
 
+    import urllib.parse
+    gallery_slug = urllib.parse.quote(g.name)
+    apply_url = f"https://naaaaaaqi.github.io/human-artark/apply/?gallery={gallery_slug}"
+    apply_btn = f'<a href="{apply_url}" class="apply-btn" target="_blank">Apply →</a>'
+
     return f"""
 <div class="card" {tags_data}>
   <div class="card-header">
@@ -206,6 +211,9 @@ def gallery_card(g: Gallery) -> str:
     {desc_html}
     {note_html}
     {events_html}
+  </div>
+  <div class="card-footer">
+    {apply_btn}
   </div>
 </div>"""
 
@@ -490,6 +498,31 @@ def build_html(galleries: List[Gallery], events_rows, resources_rows, actions_ro
     color: #ccd;
   }}
 
+  /* ── Card footer ── */
+  .card-footer {{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+  }}
+  .apply-btn {{
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid rgba(93,230,200,0.3);
+    border-radius: 6px;
+    transition: all 0.15s;
+  }}
+  .apply-btn:hover {{
+    background: rgba(93,230,200,0.1);
+    border-color: var(--accent2);
+  }}
+
   /* ── Hidden ── */
   .card.hidden {{ display: none; }}
 
@@ -507,6 +540,7 @@ def build_html(galleries: List[Gallery], events_rows, resources_rows, actions_ro
 <body>
 
 <div class="hero">
+  <div class="hero-brand"><a href="https://naaaaaaqi.github.io/human-artark/" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;">← Human ArtArk</a></div>
   <h1>Bay Area Gallery Database</h1>
   <p>San Francisco · East Bay · Peninsula · South Bay · Santa Cruz · North Bay</p>
   <div class="stats">

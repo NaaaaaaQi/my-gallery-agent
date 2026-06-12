@@ -231,6 +231,31 @@
     color: #ccd;
   }
 
+  /* ── Card footer ── */
+  .card-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+  }
+  .apply-btn {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid rgba(93,230,200,0.3);
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .apply-btn:hover {
+    background: rgba(93,230,200,0.1);
+    border-color: var(--accent2);
+  }
+
   /* ── Hidden ── */
   .card.hidden { display: none; }
 
@@ -248,12 +273,13 @@
 <body>
 
 <div class="hero">
+  <div class="hero-brand"><a href="https://naaaaaaqi.github.io/human-artark/" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;">← Human ArtArk</a></div>
   <h1>Bay Area Gallery Database</h1>
   <p>San Francisco · East Bay · Peninsula · South Bay · Santa Cruz · North Bay</p>
   <div class="stats">
-    <div class="stat-item">🏛 <span class="stat-num">77</span> galleries</div>
+    <div class="stat-item">🏛 <span class="stat-num">80</span> galleries</div>
     <div class="stat-item">🟢 <span class="stat-num">22</span> open calls</div>
-    <div class="stat-item">📅 Updated <span class="stat-num">2026-06-10</span></div>
+    <div class="stat-item">📅 Updated <span class="stat-num">2026-06-11</span></div>
   </div>
 </div>
 
@@ -261,16 +287,17 @@
   <input class="search-input" type="search" id="search" placeholder="Search galleries, addresses…" />
   <select class="filter-select" id="region-filter">
     <option value="">All regions</option>
-    <option value="⚡ MSP 园区重点子画廊 Watch List">⚡ MSP 园区重点子画廊 Watch List</option>
-<option value="东湾 East Bay（奥克兰 / 伯克利）">东湾 East Bay（奥克兰 / 伯克利）</option>
-<option value="北湾 North Bay">北湾 North Bay</option>
-<option value="半岛 / 南湾 Peninsula / South Bay">半岛 / 南湾 Peninsula / South Bay</option>
-<option value="圣克鲁斯 Santa Cruz Area">圣克鲁斯 Santa Cruz Area</option>
-<option value="旧金山 / 马林 SF / Marin">旧金山 / 马林 SF / Marin</option>
-<option value="旧金山 San Francisco">旧金山 San Francisco</option>
-<option value="🎭 核心实验性非营利空间">🎭 核心实验性非营利空间</option>
-<option value="🔵 进阶蓝筹与成熟当代画廊">🔵 进阶蓝筹与成熟当代画廊</option>
-<option value="🤖 科技、逻辑编码与跨界机构展厅">🤖 科技、逻辑编码与跨界机构展厅</option>
+    <option value="East Bay (Oakland / Berkeley)">East Bay (Oakland / Berkeley)</option>
+<option value="North Bay">North Bay</option>
+<option value="Peninsula / South Bay">Peninsula / South Bay</option>
+<option value="San Francisco">San Francisco</option>
+<option value="San Francisco / Marin">San Francisco / Marin</option>
+<option value="Santa Cruz Area">Santa Cruz Area</option>
+<option value="⚡ MSP Sub-galleries Watch List">⚡ MSP Sub-galleries Watch List</option>
+<option value="❌ Excluded Galleries">❌ Excluded Galleries</option>
+<option value="🎭 Experimental & Non-profit Spaces">🎭 Experimental & Non-profit Spaces</option>
+<option value="🔵 Blue-chip & Established Contemporary Galleries">🔵 Blue-chip & Established Contemporary Galleries</option>
+<option value="🤖 Tech, New Media & Interdisciplinary Spaces">🤖 Tech, New Media & Interdisciplinary Spaces</option>
   </select>
   <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="open">🟢 Open Call</button>
@@ -282,7 +309,7 @@
 <div class="main">
   <div class="grid" id="gallery-grid">
     
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="3" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Minnesota Street Project</h3>
@@ -291,14 +318,17 @@
     <a href="https://minnesotastreetproject.com" target="_blank" class="gallery-url">minnesotastreetproject.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1275 Minnesota St, San Francisco (Dogpatch)</div>
-    <div class="gallery-desc">- 定位: 艺术园区，14 个画廊集合体</div>
-    <div class="gallery-note">📋 - Open Call:  各子画廊独立发布，定期关注</div>
-    <div class="gallery-event">🗓 - 近期活动: 每月第一个周六 4–7pm，Atrium；7/5 下次；7/11 Open Fell，1150 25th St, Slash Gallery</div>
+    <div class="gallery-addr">📍 1275 Minnesota St, San Francisco (Dogpatch)</div>
+    <div class="gallery-desc">Arts district with 14 galleries</div>
+    <div class="gallery-note">📋 Each sub-gallery posts independently; check regularly</div>
+    <div class="gallery-event">🗓 First Saturday 4–7pm, Atrium; next 7/5; 7/11 Open Fell, 1150 25th St, Slash Gallery</div>
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Minnesota%20Street%20Project" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">City Art Gallery</h3>
@@ -308,13 +338,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 近 200 名艺术家共同运营的合作制画廊</div>
-    <div class="gallery-note">📋 - Open Call:  接受新成员申请，可申请成为合作会员参展</div>
+    <div class="gallery-desc">Artist cooperative run by ~200 artists</div>
+    <div class="gallery-note">📋 Accepting new member applications; apply to join as a cooperative member</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=City%20Art%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">111 Minna Gallery</h3>
@@ -324,13 +357,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 当代艺术 + 活动空间</div>
-    <div class="gallery-note">📋 - Open Call:  接受展览申请，联系方式见官网</div>
+    <div class="gallery-desc">Contemporary art + event space</div>
+    <div class="gallery-note">📋 Accepting exhibition proposals; see website for contact info</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=111%20Minna%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="3" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Bryant Street Gallery SF</h3>
@@ -340,13 +376,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 当代艺术，支持新艺术家首次展览</div>
-    <div class="gallery-note">📋 - Open Call:  不定期，关注官网</div>
-    <div class="gallery-event">🗓 - 近期活动: Reception 7/11（周五）5–7 PM</div>
+    <div class="gallery-desc">Contemporary art; supports first exhibitions for new artists</div>
+    <div class="gallery-note">📋 Occasional; monitor website</div>
+    <div class="gallery-event">🗓 Reception 7/11 (Friday) 5–7 PM</div>
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Bryant%20Street%20Gallery%20SF" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery House</h3>
@@ -357,12 +396,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
-    <div class="gallery-event">🗓 - 近期活动: Monthly Artist Reception，每月第二个周六 5–7pm，上次 6/13</div>
+    <div class="gallery-note">📋 Monitor website</div>
+    <div class="gallery-event">🗓 Monthly Artist Reception, second Saturday 5–7pm; last: 6/13</div>
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%20House" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Viewpoints Gallery</h3>
@@ -372,13 +414,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 艺术家合作社</div>
-    <div class="gallery-note">📋 - Open Call:  可申请成为合作社成员</div>
-    <div class="gallery-event">🗓 - 近期活动: First Friday Art Walk，每月一次</div>
+    <div class="gallery-desc">Artist cooperative</div>
+    <div class="gallery-note">📋 Apply to become a cooperative member</div>
+    <div class="gallery-event">🗓 First Friday Art Walk, monthly</div>
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Viewpoints%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">The Main Gallery</h3>
@@ -388,13 +433,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 社区画廊，每月换展</div>
-    <div class="gallery-note">📋 - Open Call:  通过 Artist Referral 渠道，关注官网</div>
+    <div class="gallery-desc">Community gallery with monthly rotating shows</div>
+    <div class="gallery-note">📋 Via Artist Referral program; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=The%20Main%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Mirus Gallery</h3>
@@ -404,13 +452,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 新兴/中期艺术家，当代艺术，私人活动场地</div>
-    <div class="gallery-note">📋 - Open Call:  不定期</div>
+    <div class="gallery-desc">Emerging/mid-career artists, contemporary art, private event venue</div>
+    <div class="gallery-note">📋 Occasional</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Mirus%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">M. Stark Gallery</h3>
@@ -421,12 +472,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  邀请制为主，仍值得关注</div>
+    <div class="gallery-note">📋 Primarily invitation-based; still worth monitoring</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=M.%20Stark%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Pamela Walsh Gallery</h3>
@@ -437,12 +491,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Pamela%20Walsh%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Andra Norris Gallery</h3>
@@ -452,13 +509,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 商业当代画廊，代理艺术家</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制，可投递 portfolio</div>
+    <div class="gallery-desc">Commercial contemporary gallery; artist representation</div>
+    <div class="gallery-note">📋 Invitation-based; portfolio submissions considered</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Andra%20Norris%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Romer Young Gallery</h3>
@@ -469,12 +529,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  邀请制为主</div>
+    <div class="gallery-note">📋 Primarily invitation-based</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Romer%20Young%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Chung 24 Gallery</h3>
@@ -485,12 +548,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Chung%2024%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Fraenkel Gallery</h3>
@@ -500,13 +566,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 顶级画廊，摄影为主</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-desc">Top-tier gallery, primarily photography</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Fraenkel%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Hosfelt Gallery</h3>
@@ -515,14 +584,17 @@
     <a href="https://hosfeltgallery.com" target="_blank" class="gallery-url">hosfeltgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 260 Utah St, San Francisco (Potrero Hill)</div>
-    <div class="gallery-desc">- 定位: 当代艺术，国际视野，9000 sq ft 工业空间</div>
-    <div class="gallery-note">📋 - Open Call:  不接受投稿</div>
+    <div class="gallery-addr">📍 260 Utah St, San Francisco (Potrero Hill)</div>
+    <div class="gallery-desc">Contemporary art, international scope, 9,000 sq ft industrial space</div>
+    <div class="gallery-note">📋 Does not accept submissions</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Hosfelt%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="unknown" data-stars="3" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="unknown" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">SOMArts Cultural Center</h3>
@@ -531,14 +603,17 @@
     <a href="https://somarts.org" target="_blank" class="gallery-url">somarts.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 934 Brannan St, San Francisco (SoMa)</div>
-    <div class="gallery-desc">- 定位: 社区驱动，关注社会公正，多元文化</div>
-    <div class="gallery-note">📋 - 备注: 每年有多个主题展览 open call，SF 最活跃的非营利艺术空间之一</div>
+    <div class="gallery-addr">📍 934 Brannan St, San Francisco (SoMa)</div>
+    <div class="gallery-desc">Community-driven, social justice focus, multicultural</div>
+    <div class="gallery-note">📋 - Notes: Multiple themed open calls per year; one of SF's most active nonprofit art spaces</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=SOMArts%20Cultural%20Center" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Catharine Clark Gallery</h3>
@@ -547,14 +622,17 @@
     <a href="https://cclarkgallery.com" target="_blank" class="gallery-url">cclarkgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 248 Utah St, San Francisco (Potrero Hill)</div>
-    <div class="gallery-desc">- 定位: 当代艺术，实验性，1991年创立</div>
-    <div class="gallery-note">📋 - Open Call:  通过 Artsy 投递或直接联系</div>
+    <div class="gallery-addr">📍 248 Utah St, San Francisco (Potrero Hill)</div>
+    <div class="gallery-desc">Contemporary art, experimental, founded 1991</div>
+    <div class="gallery-note">📋 Submit via Artsy or contact directly</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Catharine%20Clark%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery 16</h3>
@@ -563,14 +641,17 @@
     <a href="https://gallery16.com" target="_blank" class="gallery-url">gallery16.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 501 3rd St, San Francisco (SoMa)</div>
-    <div class="gallery-desc">- 定位: 实验性，当代艺术，印刷出版</div>
-    <div class="gallery-note">📋 - Open Call:  不定期</div>
+    <div class="gallery-addr">📍 501 3rd St, San Francisco (SoMa)</div>
+    <div class="gallery-desc">Experimental contemporary art, print publishing</div>
+    <div class="gallery-note">📋 Occasional</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%2016" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Ratio 3</h3>
@@ -579,14 +660,17 @@
     <a href="https://ratio3.org" target="_blank" class="gallery-url">ratio3.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1447 Stevenson St, San Francisco (Mission)</div>
-    <div class="gallery-desc">- 定位: 概念艺术，中坚及新兴艺术家</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制为主</div>
+    <div class="gallery-addr">📍 1447 Stevenson St, San Francisco (Mission)</div>
+    <div class="gallery-desc">Conceptual art, mid-career and emerging artists</div>
+    <div class="gallery-note">📋 Primarily invitation-based</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Ratio%203" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Voss Gallery</h3>
@@ -595,14 +679,17 @@
     <a href="https://vossgallery.art" target="_blank" class="gallery-url">vossgallery.art ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 2211 Market St, San Francisco (Castro)</div>
-    <div class="gallery-desc">- 定位: 当代艺术，支持新兴艺术家</div>
-    <div class="gallery-note">📋 - Open Call:  vossgallery.art/pages/submissions</div>
+    <div class="gallery-addr">📍 2211 Market St, San Francisco (Castro)</div>
+    <div class="gallery-desc">Contemporary art, supports emerging artists</div>
+    <div class="gallery-note">📋 vossgallery.art/pages/submissions</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Voss%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">ARC Gallery</h3>
@@ -611,14 +698,17 @@
     <a href="https://arc-sf.com" target="_blank" class="gallery-url">arc-sf.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1246 Folsom St, San Francisco (SoMa)</div>
-    <div class="gallery-desc">- 定位: 艺术家合作画廊，juried 展览</div>
-    <div class="gallery-note">📋 - Open Call:  常规 juried 展览，定期发布</div>
+    <div class="gallery-addr">📍 1246 Folsom St, San Francisco (SoMa)</div>
+    <div class="gallery-desc">Artist cooperative gallery, juried exhibitions</div>
+    <div class="gallery-note">📋 Regular juried exhibitions posted periodically</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=ARC%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">San Francisco Women Artists (SFWA)</h3>
@@ -627,14 +717,17 @@
     <a href="https://sfwomenartists.org" target="_blank" class="gallery-url">sfwomenartists.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 647 Irving St, San Francisco (Inner Sunset)</div>
-    <div class="gallery-desc">- 定位: 女性艺术家组织</div>
-    <div class="gallery-note">📋 - Open Call:  定期 open call</div>
+    <div class="gallery-addr">📍 647 Irving St, San Francisco (Inner Sunset)</div>
+    <div class="gallery-desc">Women artists organization</div>
+    <div class="gallery-note">📋 Regular open calls</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=San%20Francisco%20Women%20Artists%20%28SFWA%29" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 San Francisco" data-open="unknown" data-stars="1" data-blue="false">
+<div class="card" data-region="San Francisco" data-open="unknown" data-stars="1" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">SF Arts Commission Gallery</h3>
@@ -644,13 +737,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 政府支持，公共艺术</div>
+    <div class="gallery-desc">Government-supported, public art</div>
     
     
   </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=SF%20Arts%20Commission%20Gallery" class="apply-btn" target="_blank">Apply →</a>
+  </div>
 </div>
 
-<div class="card" data-region="旧金山 / 马林 SF / Marin" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco / Marin" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Haines Gallery</h3>
@@ -659,14 +755,17 @@
     <a href="https://hainesgallery.com" target="_blank" class="gallery-url">hainesgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 2 Marina Blvd, Building C, Fort Mason Center, San Francisco</div>
-    <div class="gallery-desc">- 定位: 1987年创立，国际当代艺术，全球视野</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制为主，可发 portfolio 至 art@hainesgallery.com</div>
+    <div class="gallery-addr">📍 2 Marina Blvd, Building C, Fort Mason Center, San Francisco</div>
+    <div class="gallery-desc">Founded 1987, international contemporary art, global perspective</div>
+    <div class="gallery-note">📋 Primarily invitation-based; send portfolio to art@hainesgallery.com</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Haines%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 / 马林 SF / Marin" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco / Marin" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery Sausalito</h3>
@@ -675,14 +774,17 @@
     <a href="https://gallerysausalito.com" target="_blank" class="gallery-url">gallerysausalito.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Sausalito, CA (Marin County)</div>
+    <div class="gallery-addr">📍 Sausalito, CA (Marin County)</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%20Sausalito" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 / 马林 SF / Marin" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="San Francisco / Marin" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">ZK Gallery</h3>
@@ -693,12 +795,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=ZK%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="旧金山 / 马林 SF / Marin" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="San Francisco / Marin" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Sarah Shepard Gallery</h3>
@@ -708,13 +813,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 当代艺术</div>
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-desc">Contemporary art</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Sarah%20Shepard%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Aggregate Space Gallery (ASG)</h3>
@@ -723,14 +831,17 @@
     <a href="https://aggregatespacegallery.org" target="_blank" class="gallery-url">aggregatespacegallery.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 801 William St, Oakland</div>
-    <div class="gallery-desc">- 定位: 当代艺术，实验性，支持冒险型创作</div>
-    <div class="gallery-note">📋 - Open Call:  每年 5-6 个 solo + 2-3 个 group 展览</div>
+    <div class="gallery-addr">📍 801 William St, Oakland</div>
+    <div class="gallery-desc">Contemporary art, experimental, supports risk-taking work</div>
+    <div class="gallery-note">📋 5–6 solo + 2–3 group shows per year</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Aggregate%20Space%20Gallery%20%28ASG%29" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Pro Arts Gallery & Commons</h3>
@@ -739,14 +850,17 @@
     <a href="https://proartsgallery.org" target="_blank" class="gallery-url">proartsgallery.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 150 Frank H. Ogawa Plaza, Oakland</div>
+    <div class="gallery-addr">📍 150 Frank H. Ogawa Plaza, Oakland</div>
     
-    <div class="gallery-note">📋 - Open Call:  定期，关注官网</div>
+    <div class="gallery-note">📋 Regular; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Pro%20Arts%20Gallery%20%26%20Commons" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Berkeley Art Center</h3>
@@ -755,14 +869,17 @@
     <a href="https://berkeleyartcenter.org" target="_blank" class="gallery-url">berkeleyartcenter.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1275 Walnut St, Berkeley</div>
+    <div class="gallery-addr">📍 1275 Walnut St, Berkeley</div>
     
-    <div class="gallery-note">📋 - Open Call:  2026 Juried Members Exhibition 进行中（6/13–8/15）</div>
+    <div class="gallery-note">📋 2026 Juried Members Exhibition ongoing (6/13–8/15)</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Berkeley%20Art%20Center" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Kala Art Institute</h3>
@@ -771,14 +888,17 @@
     <a href="https://kala.org" target="_blank" class="gallery-url">kala.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 2990 San Pablo Ave, Berkeley</div>
-    <div class="gallery-desc">- 定位: 版画、数字媒体、装置、影像</div>
-    <div class="gallery-note">📋 - Open Call:  展览 + Residency</div>
+    <div class="gallery-addr">📍 2990 San Pablo Ave, Berkeley</div>
+    <div class="gallery-desc">Printmaking, digital media, installation, video</div>
+    <div class="gallery-note">📋 Exhibitions + Residency</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Kala%20Art%20Institute" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Oakland Art Murmur</h3>
@@ -788,13 +908,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 画廊联合组织，每月第一个周五</div>
-    <div class="gallery-note">📋 - Open Call:  eastbayopenstudios.com/emerging-artists</div>
+    <div class="gallery-desc">Gallery collective, First Fridays</div>
+    <div class="gallery-note">📋 eastbayopenstudios.com/emerging-artists</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Oakland%20Art%20Murmur" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Mercury 20 Gallery</h3>
@@ -803,14 +926,17 @@
     <a href="https://mercurytwenty.com" target="_blank" class="gallery-url">mercurytwenty.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 475 25th St, Oakland (Uptown Arts District)</div>
-    <div class="gallery-desc">- 定位: 艺术家共同运营，2006年创立，实验性当代艺术</div>
-    <div class="gallery-note">📋 - Open Call:  开放会员申请；另有 juried 展览"Beyond Boundaries"</div>
+    <div class="gallery-addr">📍 475 25th St, Oakland (Uptown Arts District)</div>
+    <div class="gallery-desc">Artist-run, founded 2006, experimental contemporary art</div>
+    <div class="gallery-note">📋 Open membership applications; also juried exhibition "Beyond Boundaries"</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Mercury%2020%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gray Loft Gallery</h3>
@@ -819,14 +945,17 @@
     <a href="https://grayloftgallery.com" target="_blank" class="gallery-url">grayloftgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 2889 Ford St, Oakland (Jingletown 艺术区)</div>
-    <div class="gallery-desc">- 定位: 仓库改建，三楼 loft 空间，2012年创立</div>
-    <div class="gallery-note">📋 - Open Call:  grayloftgallery.com/call-for-entry（含年度色彩主题 juried 展）</div>
+    <div class="gallery-addr">📍 2889 Ford St, Oakland (Jingletown Arts District)</div>
+    <div class="gallery-desc">Converted warehouse, three-floor loft, founded 2012</div>
+    <div class="gallery-note">📋 grayloftgallery.com/call-for-entry (includes annual color-theme juried show)</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gray%20Loft%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Part 2 Gallery</h3>
@@ -835,14 +964,17 @@
     <a href="https://part2gallery.com" target="_blank" class="gallery-url">part2gallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1523b Webster St, Oakland</div>
-    <div class="gallery-desc">- 定位: 当代艺术，街头/城市文化背景</div>
-    <div class="gallery-note">📋 - Open Call:  不定期，可发邮件 info@part2gallery.com</div>
+    <div class="gallery-addr">📍 1523b Webster St, Oakland</div>
+    <div class="gallery-desc">Contemporary art，Street / urban culture background</div>
+    <div class="gallery-note">📋 Occasional; email info@part2gallery.com</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Part%202%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">The Compound Gallery</h3>
@@ -851,14 +983,17 @@
     <a href="https://thecompoundgallery.com" target="_blank" class="gallery-url">thecompoundgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Emeryville（Oakland 边界）</div>
-    <div class="gallery-desc">- 定位: 18,000 sq ft 综合艺术设施，画廊 + 版画工坊 + 共享工作室</div>
-    <div class="gallery-note">📋 - Open Call:  不定期，曾有"Scouting Oakland"主题 call；关注官网</div>
+    <div class="gallery-addr">📍 Emeryville (Oakland border)</div>
+    <div class="gallery-desc">18,000 sq ft multi-use arts facility: gallery + print studio + shared workspaces</div>
+    <div class="gallery-note">📋 Occasional; past "Scouting Oakland" themed call; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=The%20Compound%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Art House Gallery & Cultural Center</h3>
@@ -867,14 +1002,17 @@
     <a href="https://arthousegallery.org" target="_blank" class="gallery-url">arthousegallery.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Oakland</div>
+    <div class="gallery-addr">📍 Oakland</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Art%20House%20Gallery%20%26%20Cultural%20Center" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Sun Gallery</h3>
@@ -883,14 +1021,17 @@
     <a href="https://sungallery.org" target="_blank" class="gallery-url">sungallery.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Hayward, CA</div>
-    <div class="gallery-desc">- 定位: 非营利社区画廊，服务东湾南部</div>
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-addr">📍 Hayward, CA</div>
+    <div class="gallery-desc">Nonprofit community gallery serving the South East Bay</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Sun%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Olive Hyde Art Gallery</h3>
@@ -899,14 +1040,17 @@
     <a href="https://olivehydeartguild.org" target="_blank" class="gallery-url">olivehydeartguild.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Fremont, CA</div>
-    <div class="gallery-desc">- 定位: 市政支持，艺术家协会运营</div>
-    <div class="gallery-note">📋 - Open Call:  定期 juried 展，关注官网</div>
+    <div class="gallery-addr">📍 Fremont, CA</div>
+    <div class="gallery-desc">City-supported, run by artists association</div>
+    <div class="gallery-note">📋 Regular juried shows; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Olive%20Hyde%20Art%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">ACCI Gallery</h3>
@@ -915,14 +1059,17 @@
     <a href="https://accigallery.com" target="_blank" class="gallery-url">accigallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Berkeley</div>
-    <div class="gallery-desc">- 定位: 工艺 + 当代艺术，1971年创立</div>
-    <div class="gallery-note">📋 - Open Call:  不定期，关注官网</div>
+    <div class="gallery-addr">📍 Berkeley</div>
+    <div class="gallery-desc">Craft + contemporary art, founded 1971</div>
+    <div class="gallery-note">📋 Occasional; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=ACCI%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Cube Space Gallery</h3>
@@ -931,14 +1078,17 @@
     <a href="https://berkeleyca.gov" target="_blank" class="gallery-url">berkeleyca.gov ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Downtown Berkeley</div>
-    <div class="gallery-desc">- 定位: 市政支持，专注新兴/中坚 Bay Area 艺术家</div>
-    <div class="gallery-note">📋 - Open Call:  轮换制每次 3 个月，关注官网</div>
+    <div class="gallery-addr">📍 Downtown Berkeley</div>
+    <div class="gallery-desc">City-supported, focused on emerging/mid-career Bay Area artists</div>
+    <div class="gallery-note">📋 Rotating 3-month exhibitions; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Cube%20Space%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Faultline Artspace</h3>
@@ -947,14 +1097,17 @@
     <a href="https://faultlineartspace.com" target="_blank" class="gallery-url">faultlineartspace.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: East Oakland</div>
-    <div class="gallery-desc">- 定位: 女性+ 艺术家，实验性，绘画/版画/拼贴</div>
-    <div class="gallery-note">📋 - Open Call:  faultlineartspace.com/artist-submissions</div>
+    <div class="gallery-addr">📍 East Oakland</div>
+    <div class="gallery-desc">Women+ artists, experimental, painting/printmaking/collage</div>
+    <div class="gallery-note">📋 faultlineartspace.com/artist-submissions</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Faultline%20Artspace" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Rock Paper Scissors Collective</h3>
@@ -963,14 +1116,17 @@
     <a href="https://rpscollective.org" target="_blank" class="gallery-url">rpscollective.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Oakland</div>
-    <div class="gallery-desc">- 定位: DIY 艺术家集体，完全由艺术家运营</div>
-    <div class="gallery-note">📋 - Open Call:  定期，关注官网</div>
+    <div class="gallery-addr">📍 Oakland</div>
+    <div class="gallery-desc">DIY artist collective, fully artist-run</div>
+    <div class="gallery-note">📋 Regular; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Rock%20Paper%20Scissors%20Collective" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Thelma Harris Art Gallery</h3>
@@ -979,14 +1135,17 @@
     <a href="https://thelmaharrisartgallery.com" target="_blank" class="gallery-url">thelmaharrisartgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Oakland</div>
-    <div class="gallery-desc">- 定位: 非裔美国艺术家为主，社区根基深厚</div>
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-addr">📍 Oakland</div>
+    <div class="gallery-desc">Primarily African American artists, deep community roots</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Thelma%20Harris%20Art%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Abrams Claghorn Gallery</h3>
@@ -995,14 +1154,17 @@
     <a href="https://abramsclaghorn.com" target="_blank" class="gallery-url">abramsclaghorn.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Albany, CA</div>
-    <div class="gallery-desc">- 定位: 当代艺术，版画为主</div>
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-addr">📍 Albany, CA</div>
+    <div class="gallery-desc">Contemporary art, primarily printmaking</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Abrams%20Claghorn%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">E14 Gallery</h3>
@@ -1011,14 +1173,17 @@
     <a href="https://e14gallery.com" target="_blank" class="gallery-url">e14gallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Oakland</div>
+    <div class="gallery-addr">📍 Oakland</div>
     
-    <div class="gallery-note">📋 - Open Call:  待确认</div>
+    <div class="gallery-note">📋 To be confirmed</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=E14%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="东湾 East Bay（奥克兰 / 伯克利）" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="East Bay (Oakland / Berkeley)" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">JOR Fine Art Gallery</h3>
@@ -1028,13 +1193,16 @@
   </div>
   <div class="card-body">
     
-    <div class="gallery-desc">- 定位: 当代艺术</div>
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-desc">Contemporary art</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=JOR%20Fine%20Art%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="closed" data-stars="3" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="closed" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">ANNO DOMINI Gallery</h3>
@@ -1043,14 +1211,17 @@
     <a href="https://galleryad.com" target="_blank" class="gallery-url">galleryad.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 366 S 1st St, San Jose (SoFA District)</div>
-    <div class="gallery-desc">- 定位: 城市当代艺术，2000年创立，街头/涂鸦/刺青/滑板/独立出版文化</div>
-    <div class="gallery-note">📋 - Open Call:  不定期，每月第一个周五开幕新展，可发 portfolio 询问</div>
+    <div class="gallery-addr">📍 366 S 1st St, San Jose (SoFA District)</div>
+    <div class="gallery-desc">Urban contemporary art, founded 2000; street/graffiti/tattoo/skate/zine culture</div>
+    <div class="gallery-note">📋 Occasional; new shows open First Fridays — send portfolio inquiry</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=ANNO%20DOMINI%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery 9 Los Altos</h3>
@@ -1059,14 +1230,17 @@
     <a href="https://gallery9losaltos.com" target="_blank" class="gallery-url">gallery9losaltos.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 143 Main St, Los Altos, CA</div>
-    <div class="gallery-desc">- 定位: 合作制画廊，1973年创立，半岛最老画廊之一</div>
-    <div class="gallery-note">📋 - Open Call:  会员申请制，关注官网</div>
+    <div class="gallery-addr">📍 143 Main St, Los Altos, CA</div>
+    <div class="gallery-desc">Cooperative gallery, founded 1973; one of the Peninsula's oldest galleries</div>
+    <div class="gallery-note">📋 Membership application; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%209%20Los%20Altos" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery 24 Los Gatos</h3>
@@ -1075,14 +1249,17 @@
     <a href="https://gallery24losgatos.com" target="_blank" class="gallery-url">gallery24losgatos.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 24 N Santa Cruz Ave, Los Gatos, CA</div>
+    <div class="gallery-addr">📍 24 N Santa Cruz Ave, Los Gatos, CA</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%2024%20Los%20Gatos" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Whitney Modern</h3>
@@ -1091,14 +1268,17 @@
     <a href="https://whitneymodern.com" target="_blank" class="gallery-url">whitneymodern.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 24 N Santa Cruz Ave, Los Gatos (Templeman Building 二楼，1921年建筑)</div>
+    <div class="gallery-addr">📍 24 N Santa Cruz Ave, Los Gatos (Templeman Building, 2nd floor, built 1921)</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Whitney%20Modern" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Bryant Street Gallery Palo Alto</h3>
@@ -1107,14 +1287,17 @@
     <a href="https://bryantstreetgallery.com" target="_blank" class="gallery-url">bryantstreetgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Palo Alto, CA</div>
+    <div class="gallery-addr">📍 Palo Alto, CA</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Bryant%20Street%20Gallery%20Palo%20Alto" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Art Ark Gallery</h3>
@@ -1123,14 +1306,17 @@
     <a href="https://artarkgallery.com" target="_blank" class="gallery-url">artarkgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: San Jose, CA</div>
+    <div class="gallery-addr">📍 San Jose, CA</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Art%20Ark%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="半岛 / 南湾 Peninsula / South Bay" data-open="unknown" data-stars="0" data-blue="false">
+<div class="card" data-region="Peninsula / South Bay" data-open="unknown" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">QD Gallery</h3>
@@ -1144,9 +1330,12 @@
     
     
   </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=QD%20Gallery" class="apply-btn" target="_blank">Apply →</a>
+  </div>
 </div>
 
-<div class="card" data-region="圣克鲁斯 Santa Cruz Area" data-open="open" data-stars="3" data-blue="false">
+<div class="card" data-region="Santa Cruz Area" data-open="open" data-stars="3" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Felix Kulpa Gallery</h3>
@@ -1155,14 +1344,17 @@
     <a href="https://felixkulpa.com" target="_blank" class="gallery-url">felixkulpa.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 107 Elm St, Santa Cruz, CA</div>
-    <div class="gallery-desc">- 定位: 501c3 非营利，艺术家发起，雕塑花园 + 室内展览</div>
-    <div class="gallery-note">📋 - Open Call:  接受 Proposal Submission，发邮件至 art4felix@gmail.com</div>
+    <div class="gallery-addr">📍 107 Elm St, Santa Cruz, CA</div>
+    <div class="gallery-desc">501c3 nonprofit, artist-founded, sculpture garden + indoor exhibitions</div>
+    <div class="gallery-note">📋 Accepting proposal submissions; email art4felix@gmail.com</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Felix%20Kulpa%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="圣克鲁斯 Santa Cruz Area" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="Santa Cruz Area" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">m.k. contemporary art</h3>
@@ -1171,14 +1363,17 @@
     <a href="https://mkcontemporaryart.com" target="_blank" class="gallery-url">mkcontemporaryart.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Santa Cruz, CA</div>
+    <div class="gallery-addr">📍 Santa Cruz, CA</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=m.k.%20contemporary%20art" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="圣克鲁斯 Santa Cruz Area" data-open="closed" data-stars="2" data-blue="false">
+<div class="card" data-region="Santa Cruz Area" data-open="closed" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Cabrillo Gallery</h3>
@@ -1187,14 +1382,17 @@
     <a href="https://cabrillogallery.com" target="_blank" class="gallery-url">cabrillogallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Cabrillo College, Santa Cruz</div>
+    <div class="gallery-addr">📍 Cabrillo College, Santa Cruz</div>
     
-    <div class="gallery-note">📋 - Open Call:  不定期，关注官网</div>
+    <div class="gallery-note">📋 Occasional; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Cabrillo%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="圣克鲁斯 Santa Cruz Area" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="Santa Cruz Area" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Om Gallery</h3>
@@ -1203,14 +1401,17 @@
     <a href="https://omgallery.com" target="_blank" class="gallery-url">omgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Santa Cruz, CA</div>
+    <div class="gallery-addr">📍 Santa Cruz, CA</div>
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Om%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="北湾 North Bay" data-open="open" data-stars="2" data-blue="false">
+<div class="card" data-region="North Bay" data-open="open" data-stars="2" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery Route One</h3>
@@ -1219,14 +1420,17 @@
     <a href="https://galleryrouteone.org" target="_blank" class="gallery-url">galleryrouteone.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Point Reyes Station, CA</div>
-    <div class="gallery-desc">- 定位: 当代艺术，北加州区域性，非营利</div>
-    <div class="gallery-note">📋 - Open Call:  galleryrouteone.org/for-artists/call-to-artists/</div>
+    <div class="gallery-addr">📍 Point Reyes Station, CA</div>
+    <div class="gallery-desc">Contemporary art, Northern California regional nonprofit</div>
+    <div class="gallery-note">📋 galleryrouteone.org/for-artists/call-to-artists/</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%20Route%20One" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="北湾 North Bay" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="North Bay" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Gallery 621</h3>
@@ -1237,12 +1441,15 @@
   <div class="card-body">
     
     
-    <div class="gallery-note">📋 - Open Call:  关注官网</div>
+    <div class="gallery-note">📋 Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Gallery%20621" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Berggruen Gallery</h3>
@@ -1251,14 +1458,17 @@
     <a href="https://berggruen.com" target="_blank" class="gallery-url">berggruen.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 10 Hawthorne St, San Francisco (Downtown)</div>
-    <div class="gallery-desc">- 定位: SF 蓝筹天花板，顶级现代与当代艺术风向标</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 10 Hawthorne St, San Francisco (Downtown)</div>
+    <div class="gallery-desc">SF's top blue-chip gallery; benchmark for modern and contemporary art</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Berggruen%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Altman Siegel</h3>
@@ -1267,14 +1477,17 @@
     <a href="https://altmansiegel.com" target="_blank" class="gallery-url">altmansiegel.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1150 25th St, San Francisco (Dogpatch，即 MSP 园区旁)</div>
-    <div class="gallery-desc">- 定位: 国际双年展级别的架上与概念艺术，学术高度极高</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 1150 25th St, San Francisco (Dogpatch, adjacent to MSP campus)</div>
+    <div class="gallery-desc">Biennial-level painting and conceptual art; extremely high academic standard</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Altman%20Siegel" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="1" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="1" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Dolby Chadwick Gallery</h3>
@@ -1283,14 +1496,17 @@
     <a href="https://dolbychadwickgallery.com" target="_blank" class="gallery-url">dolbychadwickgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 210 Post St, San Francisco (Downtown)</div>
-    <div class="gallery-desc">- 定位: 成熟当代画廊，极度青睐油画材料、表现主义、材质肌理与复杂技法</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制，可主动投递</div>
+    <div class="gallery-addr">📍 210 Post St, San Francisco (Downtown)</div>
+    <div class="gallery-desc">Established contemporary gallery; strongly favors oil painting, expressionism, texture, and complex </div>
+    <div class="gallery-note">📋 Invitation-only; proactive portfolio submissions considered</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Dolby%20Chadwick%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Jessica Silverman</h3>
@@ -1299,14 +1515,17 @@
     <a href="https://jessicasilvermangallery.com" target="_blank" class="gallery-url">jessicasilvermangallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 488 Ellis St, San Francisco (Chinatown 附近)</div>
-    <div class="gallery-desc">- 定位: 目前 SF 在国际艺博会（Art Basel 等）风头最劲的当代画廊</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 488 Ellis St, San Francisco (near Chinatown)</div>
+    <div class="gallery-desc">Currently SF's most prominent contemporary gallery at international art fairs (Art Basel, etc.)</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Jessica%20Silverman" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Maybaum Gallery</h3>
@@ -1315,14 +1534,17 @@
     <a href="https://maybaumgallery.com" target="_blank" class="gallery-url">maybaumgallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: San Francisco Downtown</div>
-    <div class="gallery-desc">- 定位: 优雅、现代、抽象表现主义，契合湾区中产及科技新贵收藏趣味</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 San Francisco Downtown</div>
+    <div class="gallery-desc">Elegant, modern, abstract expressionism; appeals to Bay Area mid-level and tech collector tastes</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Maybaum%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Brian Gross Fine Art</h3>
@@ -1331,14 +1553,17 @@
     <a href="https://briangrossfineart.com" target="_blank" class="gallery-url">briangrossfineart.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 248 Utah St, San Francisco (Potrero Hill，同楼有 Catharine Clark)</div>
-    <div class="gallery-desc">- 定位: 极简主义、硬边抽象、空间形体构成</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 248 Utah St, San Francisco (Potrero Hill, same building as Catharine Clark)</div>
+    <div class="gallery-desc">Minimalism, hard-edge abstraction, spatial form</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Brian%20Gross%20Fine%20Art" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🔵 进阶蓝筹与成熟当代画廊" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🔵 Blue-chip & Established Contemporary Galleries" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">George Lawson Gallery</h3>
@@ -1347,14 +1572,17 @@
     <a href="https://georgelawsongallery.com" target="_blank" class="gallery-url">georgelawsongallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: San Francisco</div>
-    <div class="gallery-desc">- 定位: 纯粹"色彩绘画（Color Painting）"与纯抽象主义阵地</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 San Francisco</div>
+    <div class="gallery-desc">Dedicated to Color Painting and pure abstraction</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=George%20Lawson%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="⚡ MSP 园区重点子画廊 Watch List" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="⚡ MSP Sub-galleries Watch List" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Anglim / Trimble</h3>
@@ -1363,14 +1591,17 @@
     <a href="https://anglimtrimble.com" target="_blank" class="gallery-url">anglimtrimble.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1275 Minnesota St, San Francisco</div>
-    <div class="gallery-desc">- 定位: 湾区概念艺术与抽象表现主义老牌顶流，承接传奇画廊 Paule Anglim 衣钵</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 1275 Minnesota St, San Francisco</div>
+    <div class="gallery-desc">Legacy leader in Bay Area conceptual art and abstract expressionism; successor to legendary gallery </div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Anglim%20/%20Trimble" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="⚡ MSP 园区重点子画廊 Watch List" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="⚡ MSP Sub-galleries Watch List" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Rena Bransten Gallery</h3>
@@ -1379,14 +1610,17 @@
     <a href="https://renabranstengallery.com" target="_blank" class="gallery-url">renabranstengallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1275 Minnesota St, San Francisco</div>
-    <div class="gallery-desc">- 定位: 高水准当代油画、前沿装置与概念媒介</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 1275 Minnesota St, San Francisco</div>
+    <div class="gallery-desc">High-caliber contemporary painting, cutting-edge installation and conceptual media</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Rena%20Bransten%20Gallery" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="⚡ MSP 园区重点子画廊 Watch List" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="⚡ MSP Sub-galleries Watch List" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Nancy Toomey Fine Art</h3>
@@ -1395,14 +1629,17 @@
     <a href="https://nancytoomey.com" target="_blank" class="gallery-url">nancytoomey.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1275 Minnesota St, San Francisco</div>
-    <div class="gallery-desc">- 定位: 当代抽象油画、光影表现、空间极简主义</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 1275 Minnesota St, San Francisco</div>
+    <div class="gallery-desc">Contemporary abstract painting, light/shadow expression, spatial minimalism</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Nancy%20Toomey%20Fine%20Art" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="⚡ MSP 园区重点子画廊 Watch List" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="⚡ MSP Sub-galleries Watch List" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Municipal Bonds</h3>
@@ -1411,14 +1648,17 @@
     <a href="https://municipalbonds.art" target="_blank" class="gallery-url">municipalbonds.art ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 1275 Minnesota St, San Francisco</div>
-    <div class="gallery-desc">- 定位: 抽象几何、绘画及视觉系统编码，国际背景艺术家</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 1275 Minnesota St, San Francisco</div>
+    <div class="gallery-desc">Abstract geometry, painting and visual systems encoding; internationally based artists</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Municipal%20Bonds" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🤖 科技、逻辑编码与跨界机构展厅" data-open="closed" data-stars="1" data-blue="true">
+<div class="card" data-region="🤖 Tech, New Media & Interdisciplinary Spaces" data-open="closed" data-stars="1" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Pace Gallery Palo Alto</h3>
@@ -1427,14 +1667,17 @@
     <a href="https://pacegallery.com" target="_blank" class="gallery-url">pacegallery.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 229 Hamilton Ave, Palo Alto, CA</div>
-    <div class="gallery-desc">- 定位: 全球顶级蓝筹 Pace Gallery 硅谷分部，南湾艺术重镇</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制</div>
+    <div class="gallery-addr">📍 229 Hamilton Ave, Palo Alto, CA</div>
+    <div class="gallery-desc">Silicon Valley branch of global blue-chip Pace Gallery; major South Bay art hub</div>
+    <div class="gallery-note">📋 Invitation-only</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Pace%20Gallery%20Palo%20Alto" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🤖 科技、逻辑编码与跨界机构展厅" data-open="closed" data-stars="1" data-blue="true">
+<div class="card" data-region="🤖 Tech, New Media & Interdisciplinary Spaces" data-open="closed" data-stars="1" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Qualia Contemporary Art</h3>
@@ -1443,14 +1686,17 @@
     <a href="https://qualiacontemporaryart.com" target="_blank" class="gallery-url">qualiacontemporaryart.com ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Palo Alto, CA</div>
-    <div class="gallery-desc">- 定位: 亚太及国际前沿当代中青年艺术家桥梁画廊，近年来非常活跃</div>
-    <div class="gallery-note">📋 - Open Call:  邀请制为主，值得主动联系</div>
+    <div class="gallery-addr">📍 Palo Alto, CA</div>
+    <div class="gallery-desc">Bridge gallery for Asia-Pacific and international emerging/mid-career artists; very active in recent</div>
+    <div class="gallery-note">📋 Primarily invitation-based; worth proactively reaching out</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Qualia%20Contemporary%20Art" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🤖 科技、逻辑编码与跨界机构展厅" data-open="closed" data-stars="0" data-blue="false">
+<div class="card" data-region="🤖 Tech, New Media & Interdisciplinary Spaces" data-open="closed" data-stars="0" data-blue="false">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">Stanford / Cantor Arts Center</h3>
@@ -1459,14 +1705,17 @@
     <a href="https://museum.stanford.edu" target="_blank" class="gallery-url">museum.stanford.edu ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: Stanford University, Palo Alto</div>
-    <div class="gallery-desc">- 定位: 硅谷探讨"数字技术、逻辑编码与当代视觉"最高频的学术中心</div>
-    <div class="gallery-note">📋 - Open Call:  不接受投递</div>
+    <div class="gallery-addr">📍 Stanford University, Palo Alto</div>
+    <div class="gallery-desc">Silicon Valley's most active academic center for "digital technology, logic encoding, and contempora</div>
+    <div class="gallery-note">📋 Does not accept submissions</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Stanford%20/%20Cantor%20Arts%20Center" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🎭 核心实验性非营利空间" data-open="open" data-stars="1" data-blue="true">
+<div class="card" data-region="🎭 Experimental & Non-profit Spaces" data-open="open" data-stars="1" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">The Lab</h3>
@@ -1475,14 +1724,17 @@
     <a href="https://thelab.org" target="_blank" class="gallery-url">thelab.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 2948 16th St, San Francisco (Mission)</div>
-    <div class="gallery-desc">- 定位: 声音、动态影像、激进多媒介与行为艺术，1983年创立</div>
-    <div class="gallery-note">📋 - Open Call:  定期发布 residency 和 project 申请，关注官网</div>
+    <div class="gallery-addr">📍 2948 16th St, San Francisco (Mission)</div>
+    <div class="gallery-desc">Sound, moving image, radical multimedia and performance art, founded 1983</div>
+    <div class="gallery-note">📋 Regular residency and project calls; monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=The%20Lab" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🎭 核心实验性非营利空间" data-open="closed" data-stars="0" data-blue="true">
+<div class="card" data-region="🎭 Experimental & Non-profit Spaces" data-open="closed" data-stars="0" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">500 Capp Street（The David Ireland House）</h3>
@@ -1491,14 +1743,17 @@
     <a href="https://500cappstreet.org" target="_blank" class="gallery-url">500cappstreet.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 500 Capp St, San Francisco (Mission)</div>
-    <div class="gallery-desc">- 定位: 概念艺术圣地，探讨装置与特定物理空间的逻辑重组，David Ireland 故居</div>
-    <div class="gallery-note">📋 - Open Call:  不定期 residency call，关注官网</div>
+    <div class="gallery-addr">📍 500 Capp St, San Francisco (Mission)</div>
+    <div class="gallery-desc">Conceptual art landmark; explores installation and the logical reorganization of specific physical s</div>
+    <div class="gallery-note">📋 Occasional residency call，Monitor website</div>
     
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=500%20Capp%20Street%EF%BC%88The%20David%20Ireland%20House%EF%BC%89" class="apply-btn" target="_blank">Apply →</a>
   </div>
 </div>
 
-<div class="card" data-region="🎭 核心实验性非营利空间" data-open="closed" data-stars="1" data-blue="true">
+<div class="card" data-region="🎭 Experimental & Non-profit Spaces" data-open="closed" data-stars="1" data-blue="true">
   <div class="card-header">
     <div class="card-title-row">
       <h3 class="card-name">CCA Wattis Institute for Contemporary Arts</h3>
@@ -1507,26 +1762,79 @@
     <a href="https://wattis.org" target="_blank" class="gallery-url">wattis.org ↗</a>
   </div>
   <div class="card-body">
-    <div class="gallery-addr">📍 - 地址: 360 Kansas St, San Francisco (CCA 校区, Potrero Hill)</div>
-    <div class="gallery-desc">- 定位: 加州艺术学院顶尖当代艺术策展与实验空间</div>
-    <div class="gallery-note">📋 - Open Call:  不定期 residency / research call，关注官网</div>
+    <div class="gallery-addr">📍 360 Kansas St, San Francisco (CCA campus, Potrero Hill)</div>
+    <div class="gallery-desc">California College of the Arts' premier contemporary art curatorial and experimental space</div>
+    <div class="gallery-note">📋 Occasional residency / research call，Monitor website</div>
     
   </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=CCA%20Wattis%20Institute%20for%20Contemporary%20Arts" class="apply-btn" target="_blank">Apply →</a>
+  </div>
 </div>
 
+<div class="card" data-region="❌ Excluded Galleries" data-open="unknown" data-stars="0" data-blue="false">
+  <div class="card-header">
+    <div class="card-title-row">
+      <h3 class="card-name">Decorative / Interior-focused</h3>
+      <div class="card-badges">  <span class="badge badge-gray">Unknown</span></div>
+    </div>
+    
+  </div>
+  <div class="card-body">
+    
+    
+    
+    
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Decorative%20/%20Interior-focused" class="apply-btn" target="_blank">Apply →</a>
+  </div>
+</div>
 
+<div class="card" data-region="❌ Excluded Galleries" data-open="unknown" data-stars="0" data-blue="false">
+  <div class="card-header">
+    <div class="card-title-row">
+      <h3 class="card-name">Vanity / Pay-to-hang (low CV value)</h3>
+      <div class="card-badges">  <span class="badge badge-gray">Unknown</span></div>
+    </div>
+    
+  </div>
+  <div class="card-body">
+    
+    
+    
+    
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Vanity%20/%20Pay-to-hang%20%28low%20CV%20value%29" class="apply-btn" target="_blank">Apply →</a>
+  </div>
+</div>
 
+<div class="card" data-region="❌ Excluded Galleries" data-open="unknown" data-stars="0" data-blue="false">
+  <div class="card-header">
+    <div class="card-title-row">
+      <h3 class="card-name">Possibly closed / in transition</h3>
+      <div class="card-badges">  <span class="badge badge-gray">Unknown</span></div>
+    </div>
+    
+  </div>
+  <div class="card-body">
+    
+    
+    
+    
+  </div>
+  <div class="card-footer">
+    <a href="https://naaaaaaqi.github.io/human-artark/apply/?gallery=Possibly%20closed%20/%20in%20transition" class="apply-btn" target="_blank">Apply →</a>
+  </div>
+</div>
   </div>
   
   
-<div class="actions-section">
-  <h2>💡 Quick Action Checklist</h2>
-  <ol class="actions-list"><li>立即投递 — City Art Gallery、Viewpoints Gallery（合作社申请入口开放）</li><li>立即投递 — Voss Gallery（常设 submissions 页面）</li><li>加入会员 — Berkeley Art Center（$35-55/年），下次 call 优先权</li><li>参加活动 — 7/5 Minnesota Street Project 月度开放，7/11 Bryant Street Reception</li><li>申请项目 — Oakland Art Murmur Emerging Artist Program</li><li>订阅 newsletter — SF Artist Network 一站获取所有 call</li></ol>
-</div>
 </div>
 
 <div class="footer">
-  Last updated 2026-06-10 · Curated by hand + AI-assisted status detection ·
+  Last updated 2026-06-11 · Curated by hand + AI-assisted status detection ·
   <a href="https://github.com/NaaaaaaQi/my-gallery-agent" target="_blank">GitHub ↗</a>
 </div>
 
